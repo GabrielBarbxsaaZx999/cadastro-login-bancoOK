@@ -1,0 +1,52 @@
+const express = require('express');
+const app = express();
+const port = 8010; // Porta em que o servidor será executado
+// Rota para exibir a página HTML
+app.get('/', (req, res) => {
+res.sendFile(__dirname + '/Tela-inicio.html');
+
+});
+
+app.get('/Tela-inicio.css', (req,res) => {
+res.sendFile(__dirname + '/Tela-inicio.css')
+
+});
+// Iniciar o servidor
+app.listen(port, () => {
+console.log(`Servidor Express está rodando na porta ${port}`);
+});
+
+app.get('/Tela-inicio.js', (req,res) => {
+res.sendFile(__dirname + '/Tela-inicio.js')
+
+});
+
+app.use(express.static('.'));
+// Rota para exibir a página index.html
+app.get('/', (req, res) => {
+res.sendFile(__dirname + '/index.html');
+});
+// Rota para exibir a página outra_pagina.html
+app.get('/style.css', (req, res) => {
+res.sendFile(__dirname + '/style.css');
+});
+
+app.get('/scriptlog1.js', (req,res) => {
+res.sendFile(_dirname + '/scriptlog1.js');
+});
+
+app.get('/rodarlogin.js', (req,res) => {
+res.sendFile(_dirname + '/login2.html');
+});
+
+app.get('/rodarcadastro.js', (req,res) => {
+res.sendFile(_dirname + '/TeladeCadastro.html');
+});
+
+app.get('/rodarinicio.js', (req,res) => {
+res.sendFile(_dirname + '/consulta.html');
+});
+
+app.get('/rodarinicio.js', (req,res) => {
+res.sendFile(_dirname + '/quemsomos.html');
+});
